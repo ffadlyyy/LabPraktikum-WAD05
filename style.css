@@ -62,3 +62,43 @@ body {
   .sidebar { display: block; }
   .stat-card { flex: 1 1 200px; }
 }
+
+#menu-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color-primary);
+}
+
+@media (min-width: 1024px) {
+  #menu-toggle { display: none; }
+}
+
+.sidebar.sidebar-open {
+  display: block;
+  position: fixed;
+  top: 0; left: 0;
+  height: 100vh;
+  z-index: 10;
+}
+
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.15);
+  font-weight: bold;
+}
+
+#btn-refresh {
+  align-self: center;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#btn-refresh:hover {
+  background: var(--color-accent);
+}

@@ -8,22 +8,44 @@
 </head>
 <body>
   <div class="dashboard">
-    <aside class="sidebar">
-      <nav>...navigation menu...</nav>
+    <aside class="sidebar" id="sidebar">
+      <nav>
+        <ul>
+          <li><a href="#" class="nav-link active">Dashboard</a></li>
+          <li><a href="#" class="nav-link">Reports</a></li>
+          <li><a href="#" class="nav-link">Settings</a></li>
+        </ul>  
+      </nav>
     </aside>
     <header class="topbar">
+      <button id="menu-toggle" aria-label="Open menu">☰</button>
       <h1>Dashboard</h1>
     </header>
     <main class="content">
       <section class="stat-cards">
-        <div class="stat-card">Total Users: —</div>
-        <div class="stat-card">Total Transactions: —</div>
-        <div class="stat-card">Average: —</div>
+        <div class="stat-card">
+          Total Users: <p class="stat-value" id="stat-users">&mdash;</p>
+        </div>
+        <div class="stat-card">
+          Total Transactions: <p class="stat-value" id="stat-transactions">&mdash;</p>
+        </div>
+        <div class="stat-card">
+          Average: <p class="stat-value" id="stat-average">&mdash;</p>
+        </div>
+        <button id="btn-refresh">Refresh Data</button>  
       </section>
       <section class="chart-placeholder">
         Chart will be displayed here (Session 11)
       </section>
+      <section class="greeting-demo" aria-label="Visitor greeting demo">
+        <h2>Visitor Greeting (Demo)</h2>
+        <input type="text" id="visitor-name" placeholder="Type your name...">
+        <button id="btn-greet-unsafe">Show (Unsafe)</button>
+        <button id="btn-greet-safe">Show (Safe)</button>
+        <div id="greeting-output"></div>
+      </section>
     </main>
   </div>
+  <script src="script.js" defer></script>
 </body>
 </html>
