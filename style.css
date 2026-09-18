@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-primary: #0B4F6C;
+  --color-accent: #056688;
+  --color-bg: #F3F7F8;
+  --color-text: #1A2B3C;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+.dashboard {
+  display: grid;
+  grid-template-areas:
+    "topbar"
+    "content";
+  min-height: 100vh;
+}
+
+.sidebar { display: none; }
+.topbar { grid-area: topbar; }
+.content { grid-area: content; }
+
+.stat-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.stat-card {
+  flex: 1 1 200px;
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Tablet and up (≥ 600px) */
+@media (min-width: 600px) {
+  .stat-card {
+    flex: 1 1 45%;
+  }
+}
+
+/* Desktop and up (≥ 1024px) */
+@media (min-width: 1024px) {
+  .dashboard {
+    grid-template-columns: 240px 1fr;
+    grid-template-areas:
+      "sidebar topbar"
+      "sidebar content";
+  }
+  .sidebar { display: block; }
+  .stat-card { flex: 1 1 200px; }
+}
